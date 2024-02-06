@@ -1,10 +1,11 @@
 package catprogram;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CatProgram {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         Scanner kboard = new Scanner(System.in);
 
@@ -15,20 +16,21 @@ public class CatProgram {
             theCats[i] = new Cat();
             System.out.println("Enter name for cat " + (i + 1));
             String catName = kboard.next();
-            theCats[i].setCatName(catName);
 
             System.out.println("Enter breed for cat " + (i + 1));
             String catBreed = kboard.next();
-            theCats[i].setCatBreed(catBreed);
 
             System.out.println("Enter age for cat " + (i + 1));
             int catAge = kboard.nextInt();
-            theCats[i].setCatAge(catAge);
+
+            theCats[i].getCatDetails(catName, catBreed, catAge);
 
         }
-        
+
         //display cats deatatils
-        theCats[0].cat(theCats[0].getCatName(), theCats[0].getCatBreed(), theCats[0].getCatAge());
+        theCats[0].displaytDetailsd();
+        theCats[1].displaytDetailsd();
+        theCats[2].displaytDetailsd();
     }
 
 }
